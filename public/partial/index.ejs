@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <div class="hero">
+      <h1 style="color: white; text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">E-Commerce Website</h1>
+          <div class="container">
+            <!-- Admin Box -->
+            <div class="box admin-box" onclick="toggleOptions('adminOptions')">
+              <h2>Admin Panel</h2>
+              <p>Manage users, view analytics, and control settings. Update and Deletion the Product from the Dashboard.<br><span style="color: red; font-weight: 800;">Click to Login</span></p>
+              <div class="options" id="adminOptions">
+                <button onclick="openModal('adminLoginModal')">Login as Admin</button>
+              </div>
+            </div>
+        
+            <!-- User Box -->
+            <div class="box user-box" onclick="toggleOptions('userOptions')">
+              <h2>User Interface</h2>
+              <p>Access content, update profile, and interact with features. Add the item into cart or remove them.<br><span style="color: red; font-weight: 800;">Click to Signup or Login</span></p>
+              <div class="options user-options" id="userOptions">
+                <button onclick="openModal('userSignupModal')">User Signup</button>
+                <button onclick="openModal('userLoginModal')">User Login</button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+
+    <!-- Admin Login Modal -->
+  <div class="modal" id="adminLoginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('adminLoginModal')">&times;</span>
+      <h2>Admin Login</h2>
+      <form id="loginForm">
+        <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+      </form>
+      <div id="error-message" style="color: red; display: none;">Invalid credentials. Please try again.</div>
+    </div>
+  </div>
+
+  <div class="modal" id="userLoginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('userLoginModal')">&times;</span>
+      <h2>User Login</h2>
+      <form action="login" method="post">
+        <label for="userUsername">Username</label>
+        <input type="text" id="userUsername" placeholder="Enter username" required>
+        <label for="userPassword">Password</label>
+        <input type="password" id="userPassword" placeholder="Enter password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="userSignupModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('userSignupModal')">&times;</span>
+      <h2>User Signup</h2>
+      <form action="signup" method="post">
+        <label for="userSignupUsername">Username</label>
+        <input type="text" id="userSignupUsername" placeholder="Enter username" required>
+        <label for="userSignupPassword">Password</label>
+        <input type="password" id="userSignupPassword" placeholder="Enter password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+    <script src="/script/script.js"></script>
+</body>
+</html>
